@@ -5,7 +5,7 @@ branding:
   color: 'blue'
 inputs:
   command:
-    description: "Your command (kubectl or helm)"
+    description: "Your command (kubectl, helmfile or helm)"
     required: true
   plugins:
     description: "Comma-separated URLs for the Helm Plugins you need installed"
