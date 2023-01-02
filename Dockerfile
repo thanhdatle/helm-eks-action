@@ -25,7 +25,7 @@ RUN wget https://get.helm.sh/helm-v${HELM_VERSION}-linux-amd64.tar.gz -O - | tar
 RUN chmod +x /usr/local/bin/helm
 
 #RUN wget https://github.com/roboll/helmfile/releases/download/v0.138.7/helmfile_linux_amd64 -O /usr/local/bin/helmfile
-RUN wget https://github.com/helmfile/helmfile/releases/download/v0.149.0/helmfile_0.149.0_linux_amd64.tar.gz -O - | tar -xz0 helmfile_0.149.0_linux_amd64 > /usr/local/bin/helmfile
+RUN wget https://github.com/helmfile/helmfile/releases/download/v0.149.0/helmfile_0.149.0_linux_amd64.tar.gz -O - | tar -xzO helmfile_0.149.0_linux_amd64 > /usr/local/bin/helmfile
 RUN chmod +x /usr/local/bin/helmfile
 
 COPY entrypoint.sh /entrypoint.sh
