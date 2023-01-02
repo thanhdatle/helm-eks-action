@@ -15,7 +15,9 @@ ARG KUBECTL_VERSION="1.25.4"
 COPY --from=sops /usr/local/bin/sops /usr/bin/sops
 
 RUN apk add py-pip curl wget ca-certificates git bash jq gcc alpine-sdk
-RUN pip install "awscli==${AWSCLI_VERSION}"
+#RUN pip install "awscli==${AWSCLI_VERSION}"
+RUN pip install awscliv2
+RUN alias aws="awsv2"
 RUN curl -L -o /usr/bin/kubectl https://dl.k8s.io/release/v${KUBECTL_VERSION}/bin/linux/amd64/kubectl
 RUN chmod +x /usr/bin/kubectl
 
